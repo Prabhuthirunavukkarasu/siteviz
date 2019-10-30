@@ -1,0 +1,45 @@
+<div class="grid-container" id="">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile>
+      <!-- MAPS -->
+      <mat-card class="dashboard-card" [routerLink]="['maps']">
+        <mat-card-header>
+          <mat-card-title>
+            Maps
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item [routerLink]="['maps']">Open</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image
+          src="https://i2.wp.com/zultimatesprings.com/wp-content/uploads/2017/10/google-map-background-1900x1170.png?ssl=1"
+          alt="Maps">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <!-- FLOOR PLANS -->
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Floor Plan
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="floormenu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #floormenu="matMenu" xPosition="before">
+              <button mat-menu-item [routerLink]="['floorplan']">Open</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image
+          src="https://media.istockphoto.com/photos/rolled-architectural-blueprints-and-pencil-on-floor-plan-drawing-picture-id691891990"
+          alt="Floor Plan">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

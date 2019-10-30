@@ -1,0 +1,34 @@
+<div class="toolbar">
+    <mat-toolbar color="accent">
+        <span>Maps</span>
+    </mat-toolbar>
+</div>
+<div class="maps" leaflet [leafletOptions]="options" [leafletLayers]="layers" [(leafletZoom)]="zoom" (leafletClick)="onMapReady($event)"></div>
+<mat-divider></mat-divider>
+<div>
+    <mat-card class="dashboard-card">
+        <mat-card-header>
+            <mat-card-title>
+                Location
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="example-container">
+
+                <mat-form-field>
+                    <input matInput placeholder="Latitude" type="number" [(ngModel)]="latitude">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Longitude" type="number" [(ngModel)]="longitude">
+                </mat-form-field>
+
+            </div>
+            <div>
+                <mat-divider></mat-divider>
+                <button mat-raised-button color="accent"
+                    (click)="getCoordinatedLocation(latitude,longitude)">Get Map</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
